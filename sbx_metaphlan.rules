@@ -96,8 +96,8 @@ rule metaphlan_database:
             # these rules.
             path_db="{params.conda_prefix}/opt/metaphlan_databases"
             mkdir -p "$path_db"
-            ln -sfT "$path_db" "$CONDA_PREFIX"/bin/databases
-            ln -sfT "$path_db" "$CONDA_PREFIX"/bin/metaphlan_databases
+            ln -sf "$path_db" "$CONDA_PREFIX"/bin/databases
+            ln -sf "$path_db" "$CONDA_PREFIX"/bin/metaphlan_databases
 
             function lsbt2 {{
             ls -1 "$CONDA_PREFIX"/bin/databases/mpa_v20_m200{{.{{1..4}},.rev.{{1..2}}}}.bt2 2> /dev/null | wc -l
